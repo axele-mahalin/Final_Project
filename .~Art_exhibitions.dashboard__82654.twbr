@@ -1,0 +1,673 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20231.23.0511.1508                               -->
+<workbook original-version='18.1' source-build='2023.1.2 (20231.23.0511.1508)' source-platform='mac' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <_.fcp.AccessibleZoneTabOrder.true...AccessibleZoneTabOrder />
+    <_.fcp.AnimationOnByDefault.true...AnimationOnByDefault />
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <MapboxVectorStylesAndLayers />
+    <_.fcp.MarkAnimation.true...MarkAnimation />
+    <_.fcp.ObjectModelEncapsulateLegacy.true...ObjectModelEncapsulateLegacy />
+    <_.fcp.ObjectModelTableType.true...ObjectModelTableType />
+    <_.fcp.SchemaViewerObjectModel.true...SchemaViewerObjectModel />
+    <SetMembershipControl />
+    <SheetIdentifierTracking />
+    <WindowsPersistSimpleIdentifiers />
+    <WorksheetBackgroundTransparency />
+    <ZoneBackgroundTransparency />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <_.fcp.AnimationOnByDefault.false...style>
+    <_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule element='animation'>
+      <_.fcp.AnimationOnByDefault.false...format attr='animation-on' value='ao-on' />
+    </_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule>
+  </_.fcp.AnimationOnByDefault.false...style>
+  <datasources>
+    <datasource caption='visitors' inline='true' name='federated.1q4ftg50pbmzow13hskue152832x' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='visitors' name='textscan.1ii0o2h0w27sqt11u01060w1e1h7'>
+            <connection class='textscan' directory='Data/Cleaned_data' filename='visitors.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='textscan.1ii0o2h0w27sqt11u01060w1e1h7' name='visitors.csv' table='[visitors#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='fr_FR' separator=','>
+            <column datatype='integer' name='REF DU MUSEE' ordinal='0' />
+            <column datatype='string' name='NOM DU MUSEE' ordinal='1' />
+            <column datatype='integer' name='Année' ordinal='2' />
+            <column datatype='string' name='REGION' ordinal='3' />
+            <column datatype='string' name='VILLE' ordinal='4' />
+            <column datatype='integer' name='PAYANT' ordinal='5' />
+            <column datatype='integer' name='GRATUIT' ordinal='6' />
+            <column datatype='integer' name='TOTAL' ordinal='7' />
+            <column datatype='string' name='ID MUSEOFILE' ordinal='8' />
+            <column datatype='string' name='NOMDEP' ordinal='9' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.false...relation>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation connection='textscan.1ii0o2h0w27sqt11u01060w1e1h7' name='visitors.csv' table='[visitors#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='fr_FR' separator=','>
+            <column datatype='integer' name='REF DU MUSEE' ordinal='0' />
+            <column datatype='string' name='NOM DU MUSEE' ordinal='1' />
+            <column datatype='integer' name='Année' ordinal='2' />
+            <column datatype='string' name='REGION' ordinal='3' />
+            <column datatype='string' name='VILLE' ordinal='4' />
+            <column datatype='integer' name='PAYANT' ordinal='5' />
+            <column datatype='integer' name='GRATUIT' ordinal='6' />
+            <column datatype='integer' name='TOTAL' ordinal='7' />
+            <column datatype='string' name='ID MUSEOFILE' ordinal='8' />
+            <column datatype='string' name='NOMDEP' ordinal='9' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[visitors.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;fr_FR&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;€&quot;</attribute>
+              <attribute datatype='string' name='decimal-char'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;fr_FR&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='thousands-char'>&quot; &quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>REF DU MUSEE</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[REF DU MUSEE]</local-name>
+            <parent-name>[visitors.csv]</parent-name>
+            <remote-alias>REF DU MUSEE</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[visitors.csv_9A6CBD4A70474FD9B3E254F184A00702]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>NOM DU MUSEE</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[NOM DU MUSEE]</local-name>
+            <parent-name>[visitors.csv]</parent-name>
+            <remote-alias>NOM DU MUSEE</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LFR_RFR' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[visitors.csv_9A6CBD4A70474FD9B3E254F184A00702]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Année</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Année]</local-name>
+            <parent-name>[visitors.csv]</parent-name>
+            <remote-alias>Année</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[visitors.csv_9A6CBD4A70474FD9B3E254F184A00702]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>REGION</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[REGION]</local-name>
+            <parent-name>[visitors.csv]</parent-name>
+            <remote-alias>REGION</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LFR_RFR' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[visitors.csv_9A6CBD4A70474FD9B3E254F184A00702]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>VILLE</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[VILLE]</local-name>
+            <parent-name>[visitors.csv]</parent-name>
+            <remote-alias>VILLE</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LFR_RFR' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[visitors.csv_9A6CBD4A70474FD9B3E254F184A00702]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PAYANT</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[PAYANT]</local-name>
+            <parent-name>[visitors.csv]</parent-name>
+            <remote-alias>PAYANT</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[visitors.csv_9A6CBD4A70474FD9B3E254F184A00702]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>GRATUIT</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[GRATUIT]</local-name>
+            <parent-name>[visitors.csv]</parent-name>
+            <remote-alias>GRATUIT</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[visitors.csv_9A6CBD4A70474FD9B3E254F184A00702]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>TOTAL</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[TOTAL]</local-name>
+            <parent-name>[visitors.csv]</parent-name>
+            <remote-alias>TOTAL</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[visitors.csv_9A6CBD4A70474FD9B3E254F184A00702]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ID MUSEOFILE</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[ID MUSEOFILE]</local-name>
+            <parent-name>[visitors.csv]</parent-name>
+            <remote-alias>ID MUSEOFILE</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LFR_RFR' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[visitors.csv_9A6CBD4A70474FD9B3E254F184A00702]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>NOMDEP</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[NOMDEP]</local-name>
+            <parent-name>[visitors.csv]</parent-name>
+            <remote-alias>NOMDEP</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LFR_RFR' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[visitors.csv_9A6CBD4A70474FD9B3E254F184A00702]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column aggregation='Sum' datatype='integer' name='[Année]' role='dimension' type='quantitative' />
+      <column datatype='integer' name='[GRATUIT]' role='measure' type='quantitative' />
+      <column datatype='integer' name='[PAYANT]' role='measure' type='quantitative' />
+      <column datatype='integer' name='[TOTAL]' role='measure' type='quantitative' />
+      <column datatype='string' name='[VILLE]' role='dimension' semantic-role='[City].[Name]' type='nominal' />
+      <_.fcp.ObjectModelTableType.true...column caption='visitors.csv' datatype='table' name='[__tableau_internal_object_id__].[visitors.csv_9A6CBD4A70474FD9B3E254F184A00702]' role='measure' type='quantitative' />
+      <column-instance column='[GRATUIT]' derivation='Sum' name='[sum:GRATUIT:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[PAYANT]' derivation='Sum' name='[sum:PAYANT:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[TOTAL]' derivation='Sum' name='[sum:TOTAL:qk]' pivot='key' type='quantitative' />
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[:Measure Names]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.1q4ftg50pbmzow13hskue152832x].[sum:PAYANT:qk]&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;[federated.1q4ftg50pbmzow13hskue152832x].[sum:GRATUIT:qk]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.1q4ftg50pbmzow13hskue152832x].[sum:TOTAL:qk]&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;France&quot;' />
+      </semantic-values>
+      <date-options start-of-week='monday' />
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='visitors.csv' id='visitors.csv_9A6CBD4A70474FD9B3E254F184A00702'>
+            <properties context=''>
+              <relation connection='textscan.1ii0o2h0w27sqt11u01060w1e1h7' name='visitors.csv' table='[visitors#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='fr_FR' separator=','>
+                  <column datatype='integer' name='REF DU MUSEE' ordinal='0' />
+                  <column datatype='string' name='NOM DU MUSEE' ordinal='1' />
+                  <column datatype='integer' name='Année' ordinal='2' />
+                  <column datatype='string' name='REGION' ordinal='3' />
+                  <column datatype='string' name='VILLE' ordinal='4' />
+                  <column datatype='integer' name='PAYANT' ordinal='5' />
+                  <column datatype='integer' name='GRATUIT' ordinal='6' />
+                  <column datatype='integer' name='TOTAL' ordinal='7' />
+                  <column datatype='string' name='ID MUSEOFILE' ordinal='8' />
+                  <column datatype='string' name='NOMDEP' ordinal='9' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+        </objects>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+  </datasources>
+  <mapsources>
+    <mapsource name='Tableau' />
+  </mapsources>
+  <worksheets>
+    <worksheet name='Barchart - visitors by year (free/paid)'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='visitors' name='federated.1q4ftg50pbmzow13hskue152832x' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1q4ftg50pbmzow13hskue152832x'>
+            <column aggregation='Sum' datatype='integer' name='[Année]' role='dimension' type='quantitative' />
+            <column datatype='integer' name='[GRATUIT]' role='measure' type='quantitative' />
+            <column datatype='integer' name='[PAYANT]' role='measure' type='quantitative' />
+            <column datatype='integer' name='[TOTAL]' role='measure' type='quantitative' />
+            <column datatype='string' name='[VILLE]' role='dimension' semantic-role='[City].[Name]' type='nominal' />
+            <column-instance column='[Année]' derivation='None' name='[none:Année:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[VILLE]' derivation='None' name='[none:VILLE:nk]' pivot='key' type='nominal' />
+            <column-instance column='[GRATUIT]' derivation='Sum' name='[sum:GRATUIT:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[PAYANT]' derivation='Sum' name='[sum:PAYANT:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[TOTAL]' derivation='Sum' name='[sum:TOTAL:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1q4ftg50pbmzow13hskue152832x].[:Measure Names]'>
+            <groupfilter function='union' user:op='manual'>
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.1q4ftg50pbmzow13hskue152832x].[sum:GRATUIT:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.1q4ftg50pbmzow13hskue152832x].[sum:PAYANT:qk]&quot;' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.1q4ftg50pbmzow13hskue152832x].[none:VILLE:nk]'>
+            <groupfilter function='level-members' level='[none:VILLE:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.1q4ftg50pbmzow13hskue152832x].[:Measure Names]</column>
+            <column>[federated.1q4ftg50pbmzow13hskue152832x].[none:VILLE:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='refline'>
+            <format attr='fill-above' id='refline0' value='#00000000' />
+            <format attr='fill-below' id='refline0' value='#00000000' />
+            <format attr='line-visibility' id='refline0' value='on' />
+            <format attr='line-pattern-only' id='refline0' value='solid' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1q4ftg50pbmzow13hskue152832x].[:Measure Names]' />
+              <lod column='[federated.1q4ftg50pbmzow13hskue152832x].[sum:TOTAL:qk]' />
+            </encodings>
+            <reference-line axis-column='[federated.1q4ftg50pbmzow13hskue152832x].[Multiple Values]' enable-instant-analytics='true' formula='average' id='refline0' label-type='automatic' probability='95' scope='per-table' value-column='[federated.1q4ftg50pbmzow13hskue152832x].[Multiple Values]' z-order='1' />
+          </pane>
+        </panes>
+        <rows>[federated.1q4ftg50pbmzow13hskue152832x].[Multiple Values]</rows>
+        <cols>([federated.1q4ftg50pbmzow13hskue152832x].[none:Année:ok] / [federated.1q4ftg50pbmzow13hskue152832x].[:Measure Names])</cols>
+      </table>
+      <simple-id uuid='{29444760-C8AE-40C7-BE09-B43461170242}' />
+    </worksheet>
+    <worksheet name='Mapchart - visitors by city'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontname='Heiti SC'>&lt;Sheet Name&gt;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='visitors' name='federated.1q4ftg50pbmzow13hskue152832x' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.1q4ftg50pbmzow13hskue152832x'>
+            <column aggregation='Sum' datatype='integer' name='[Année]' role='dimension' type='quantitative' />
+            <column datatype='integer' name='[TOTAL]' role='measure' type='quantitative' />
+            <column datatype='string' name='[VILLE]' role='dimension' semantic-role='[City].[Name]' type='nominal' />
+            <column-instance column='[Année]' derivation='None' name='[none:Année:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[VILLE]' derivation='None' name='[none:VILLE:nk]' pivot='key' type='nominal' />
+            <column-instance column='[TOTAL]' derivation='Sum' name='[sum:TOTAL:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='quantitative' column='[federated.1q4ftg50pbmzow13hskue152832x].[none:Année:qk]' included-values='in-range'>
+            <min>2001</min>
+            <max>2020</max>
+          </filter>
+          <slices>
+            <column>[federated.1q4ftg50pbmzow13hskue152832x].[none:Année:qk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.1q4ftg50pbmzow13hskue152832x].[Longitude (generated)]' field-type='quantitative' max='1507274.7486285097' min='-1132039.4216641621' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.1q4ftg50pbmzow13hskue152832x].[Latitude (generated)]' field-type='quantitative' max='6716848.0701036174' min='5134440.471586328' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.1q4ftg50pbmzow13hskue152832x].[sum:TOTAL:qk]' max='1000000' min='100' palette='orange_10_0' type='interpolated' />
+          </style-rule>
+          <style-rule element='map'>
+            <format attr='washout' value='0.0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <lod column='[federated.1q4ftg50pbmzow13hskue152832x].[none:VILLE:nk]' />
+              <color column='[federated.1q4ftg50pbmzow13hskue152832x].[sum:TOTAL:qk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.1q4ftg50pbmzow13hskue152832x].[Latitude (generated)]</rows>
+        <cols>[federated.1q4ftg50pbmzow13hskue152832x].[Longitude (generated)]</cols>
+      </table>
+      <simple-id uuid='{D3232AD2-7F03-4223-A9A7-BBA894D84DC7}' />
+    </worksheet>
+    <worksheet name='Sheet 3'>
+      <table>
+        <view>
+          <datasources />
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{184DED55-B7C8-4604-8344-4B96D5474C7F}' />
+    </worksheet>
+    <worksheet name='Sheet 4'>
+      <table>
+        <view>
+          <datasources />
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{C52741FD-B70F-40E4-A854-66D2E46F69B5}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard _.fcp.AccessibleZoneTabOrder.true...enable-sort-zone-taborder='true' name='Dashboard 1'>
+      <style />
+      <size maxheight='800' maxwidth='1000' minheight='800' minwidth='1000' />
+      <datasources>
+        <datasource caption='visitors' name='federated.1q4ftg50pbmzow13hskue152832x' />
+      </datasources>
+      <datasource-dependencies datasource='federated.1q4ftg50pbmzow13hskue152832x'>
+        <column aggregation='Sum' datatype='integer' name='[Année]' role='dimension' type='quantitative' />
+        <column-instance column='[Année]' derivation='None' name='[none:Année:qk]' pivot='key' type='quantitative' />
+      </datasource-dependencies>
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98000' id='10' param='horz' type-v2='layout-flow' w='98400' x='800' y='1000'>
+            <zone h='98000' id='8' type-v2='layout-basic' w='82400' x='800' y='1000'>
+              <zone h='89063' id='5' param='horz' type-v2='layout-flow' w='82400' x='800' y='9937' />
+              <zone forceUpdate='true' h='8937' id='6' type-v2='text' w='82400' x='800' y='1000'>
+                <formatted-text>
+                  <run fontcolor='#000000' fontname='Heiti SC' fontsize='48'>Art exhibitions</run>
+                </formatted-text>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+            <zone fixed-size='160' h='98000' id='9' is-fixed='true' param='vert' type-v2='layout-flow' w='16000' x='83200' y='1000'>
+              <zone h='8625' id='11' name='Mapchart - visitors by city' param='[federated.1q4ftg50pbmzow13hskue152832x].[none:Année:qk]' show-domain='false' show-null-ctrls='false' type-v2='filter' w='16000' x='83200' y='1000'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+        <zone h='39250' id='3' is-centered='0' is-scaled='1' param='Image/kandinsky-jaune-rouge-bleu-bandeau.jpg' type-v2='bitmap' w='50000' x='1700' y='11750' />
+        <zone h='39000' id='7' name='Mapchart - visitors by city' w='44800' x='53500' y='11875'>
+          <layout-cache minwidth='202' type-h='fixed' type-w='scalable' />
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='750' minheight='750' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='13' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98000' id='12' param='vert' type-v2='layout-flow' w='98400' x='800' y='1000'>
+                <zone forceUpdate='true' h='8937' id='6' type-v2='text' w='82400' x='800' y='1000'>
+                  <formatted-text>
+                    <run fontcolor='#000000' fontname='Heiti SC' fontsize='48'>Art exhibitions</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='39250' id='3' is-centered='0' is-fixed='true' is-scaled='1' param='Image/kandinsky-jaune-rouge-bleu-bandeau.jpg' type-v2='bitmap' w='50000' x='1700' y='11750'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='8625' id='11' name='Mapchart - visitors by city' param='[federated.1q4ftg50pbmzow13hskue152832x].[none:Année:qk]' show-domain='false' show-null-ctrls='false' type-v2='filter' w='16000' x='83200' y='1000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='39000' id='7' is-fixed='true' name='Mapchart - visitors by city' w='44800' x='53500' y='11875'>
+                  <layout-cache minwidth='202' type-h='fixed' type-w='scalable' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{B49E41EB-302A-414D-A04A-BC4D3F0D89B0}' />
+    </dashboard>
+  </dashboards>
+  <windows source-height='30'>
+    <window class='worksheet' maximized='true' name='Mapchart - visitors by city'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card param='[federated.1q4ftg50pbmzow13hskue152832x].[none:Année:qk]' show-domain='false' show-null-ctrls='false' type='filter' />
+            <card pane-specification-id='0' param='[federated.1q4ftg50pbmzow13hskue152832x].[sum:TOTAL:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <default-map-tool-selection tool='2' />
+      </viewpoint>
+      <simple-id uuid='{188A5BC7-B97D-4A87-9341-034E08A318D5}' />
+    </window>
+    <window class='worksheet' name='Barchart - visitors by year (free/paid)'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card type='measures' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card mode='checkdropdown' param='[federated.1q4ftg50pbmzow13hskue152832x].[none:VILLE:nk]' type='filter' />
+            <card pane-specification-id='0' param='[federated.1q4ftg50pbmzow13hskue152832x].[:Measure Names]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{A2122309-77C2-4A89-AA7E-79129A1AB53A}' />
+    </window>
+    <window class='worksheet' name='Sheet 3'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{DA2B8E8C-141C-4CE9-8E49-14B5ECE5CB5D}' />
+    </window>
+    <window class='worksheet' name='Sheet 4'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{0FD55C2A-64BA-4EBA-BC11-ED84A253759A}' />
+    </window>
+    <window class='dashboard' name='Dashboard 1'>
+      <viewpoints>
+        <viewpoint name='Mapchart - visitors by city'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='-1' />
+      <simple-id uuid='{5744D0FB-BBAF-4DF8-9AA8-6612E9E77F5A}' />
+    </window>
+  </windows>
+</workbook>
