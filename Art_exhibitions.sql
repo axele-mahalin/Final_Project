@@ -1,0 +1,1 @@
+SELECT * FROM Paris_museums
