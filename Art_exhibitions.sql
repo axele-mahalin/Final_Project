@@ -1,53 +1,42 @@
 #Query 1: Number of museums by region in France
 
-SELECT REGION, COUNT(`NOM DU MUSEE`) AS "NOMBRE DE MUSEES"
+SELECT region, COUNT(nom_du_musee) AS "nombre de musées"
 FROM visitors
-GROUP BY REGION
+GROUP BY region
 ORDER BY 2 DESC;
 
 #Query 2: Number of exhibitions in Paris and breakdown by Type of price
 
-SELECT `Type de prix`, COUNT(Titre) AS "Nombre d'expositions"
+SELECT type_de_prix, COUNT(Titre) AS "nombre d'expositions"
 FROM Paris_exhibitions
-GROUP BY `Type de prix`
+GROUP BY type_de_prix
 ORDER BY 2 DESC;
 
 #Query 3: Top 10 Parisian museums in terms of exhibitions available
 
-SELECT `Nom du lieu`, COUNT(exhibitions.Titre) AS "Nombre d'expositions"
+SELECT nom_du_lieu, COUNT(exhibitions.Titre) AS "nombre d'expositions"
 FROM exhibitions.Paris_exhibitions AS exhibitions
 LEFT JOIN exhibitions.visitors AS visitors
-	ON exhibitions.`Nom du lieu` = visitors.`NOM DU MUSEE`
-GROUP BY `Nom du lieu`
+	ON exhibitions.nom_du_lieu = visitors.nom_du_musee
+GROUP BY nom_du_lieu
 ORDER BY 2 DESC
 LIMIT 10;
 
-#Query 4: Number of visitors by audience
+#Query 4: Top 10 Parisian museums in terms of visitors and % of paid versus free
 
-/*
-SELECT exhibitions.audience, SUM(visitors.TOTAL) AS "Total", SUM(visitors.PAYANT) AS "Payant", SUM(visitors.GRATUIT) AS "Gratuit"
-FROM exhibitions.Paris_exhibitions AS exhibitions
-INNER JOIN exhibitions.visitors AS visitors
-	ON exhibitions.`Nom du lieu` = visitors.`NOM DU MUSEE`
-GROUP BY exhibitions.audience
-ORDER BY 2 DESC;
-*/
-
-#OR Query 4: Top 10 Parisian museums in terms of visitors and % of paid versus free
-
-SELECT `NOM DU MUSEE`, SUM(TOTAL) AS "NOMBRE DE VISITEURS", ROUND(SUM(PAYANT) / SUM(TOTAL) * 100) AS "% PAYANT", ROUND(SUM(GRATUIT) / SUM(TOTAL) * 100) AS "% GRATUIT"
+SELECT nom_du_musee, SUM(TOTAL) AS "nombre de visiteurs", ROUND(SUM(payant) / SUM(total) * 100) AS "% payant", ROUND(SUM(gratuit) / SUM(total) * 100) AS "% gratuit"
 FROM visitors
-GROUP BY `NOM DU MUSEE`
+GROUP BY nom_du_musee
 ORDER BY 2 DESC
 LIMIT 10;
 
 #Query 5: Top 10 Parisian museums in terms of exhibitions average duration
 
-SELECT `Nom officiel du musée`, ROUND(AVG(exhibitions.durée)) AS "Durée moyenne (en jours)"
+SELECT nom_officiel_du_musée, ROUND(AVG(exhibitions.durée)) AS "durée moyenne (en jours)"
 FROM exhibitions.museums AS museums
 LEFT JOIN exhibitions.Paris_exhibitions AS exhibitions
-	ON museums.`Nom officiel du musée` = exhibitions.`Nom du lieu`
-GROUP BY `Nom officiel du musée`
+	ON museums.nom_officiel_du_musée = exhibitions.nom_du_lieu
+GROUP BY nom_officiel_du_musée
 ORDER BY 2 DESC
 LIMIT 10;
 
