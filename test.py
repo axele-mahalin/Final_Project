@@ -135,32 +135,30 @@ st.divider()
 
 ### Select box
 
-interested = st.selectbox("Are you interested in the suggested exhibitions?", ['Your answer...', 'Yes','No'])
+#interested = st.selectbox("Are you interested in the suggested exhibitions?", ['Your answer...', 'Yes', 'No'])
 
-###### Condition 
+st.subheader("You liked it? Interested in other related activites?")
 
-index = 0  # Counter to keep track of the suggested exhibitions
-while True:
-    if index < len(exhibition_suggested):
-        new_exhibition_suggestion = exhibition_suggested.iloc[index]
-        while True:
-            if interested == 'Yes':
-                similar_exhibitions = find_similar_exhibitions(index_suggested)
-                st.write(pd.DataFrame(similar_exhibitions))
-                break 
-            elif interested == 'No':
-                new_exhibition_suggestion = exhibition_suggested.drop(index=index_suggested)
-                new_exhibition_suggested = new_exhibition_suggestion.sample()
-                st.subheader("Here is another exhibition you could like:")
-                st.write("**Title:**", new_exhibition_suggested['titre'].values[0])
-                st.write('**Description:** ', new_exhibition_suggested['chapeau'].values[0])
-                st.write('**Location:** ', new_exhibition_suggested['nom_du_lieu'].values[0])
-                response = st.radio("Is the suggested exhibition relevant for you?", ["Yes", "No"])
-                break
-            else:
-                st.write("No value selected")
-        else:
-            return
-    else:
-        st.write("No more exhibitions to suggest.")
-        return
+checkbox_one = st.checkbox("Yes")
+checkbox_two = st.checkbox("No")
+
+###### Condition
+
+def recommend_exhibition(exhibition_suggested):
+    index = 0  # Counter to keep track of the suggested exhibitions
+    new_exhibition_suggestion = exhibition_suggested.iloc[index]
+    if checkbox_one == "Yes":
+        similar_exhibitions = find_similar_exhibitions(index_suggested)
+        st.write(pd.DataFrame(similar_exhibitions))
+    elif checkbox_two == "No":
+        new_exhibition_suggestion = exhibition_suggested.drop(index=index_suggested)
+        new_exhibition_suggested = new_exhibition_suggestion.sample()
+        st.subheader("Here is another exhibition you could like:")
+        st.write("**Title:**", new_exhibition_suggested['titre'].values[0])
+        st.write('**Description:** ', new_exhibition_suggested['chapeau'].values[0])
+        st.write('**Location:** ', new_exhibition_suggested['nom_du_lieu'].values[0])
+        response = st.radio("Is the suggested exhibition relevant for you?", ["Yes", "No"])
+    index += 1
+
+
+
