@@ -80,10 +80,11 @@ pd.set_option('display.max_columns', 20)
 
 ##### Data input - date of the exhibition
 d = st.date_input('When do you want to go for an exhibition?', datetime.date(2023, 6, 9))
+Paris_exhibitions["date_choisie"] = d
 
 ##### Data input - genre of the exhibition
 
-genres = Paris_exhibitions['genre'].unique()
+genres = ['Art contemporain', 'Expo', 'Littérature', 'Cinéma', 'Bd', 'Histoire', 'Lgbt', 'Photo', 'Innovation', 'Nature', 'Photographie', 'Street-art', 'Peinture', 'Sculpture', 'Sciences']
 genre = st.selectbox("What kind of exhibition are you interested in?", genres)
 
 ##### Data input - audience of the exhibition
@@ -102,13 +103,11 @@ st.write('**Audience:**', audience)
 # NOTE: VOIR POUR FILTRER EN FONCTION DE LA DATE 
 
 exhibition_suggestion = Paris_exhibitions.loc[(Paris_exhibitions["genre"] == genre) & (Paris_exhibitions["audience"] == audience)]
+
 exhibition_suggested = exhibition_suggestion.sample()
 
 # retrieve the index number of the exhibition suggested
 index_suggested = exhibition_suggested.index.item()
-
-# retrieve the exhibition information
-# exhibition_suggestion.loc[index_suggested:index_suggested]
 
 # removes the exhibition suggested from the exhibition suggestion
 new_exhibition_suggestion = exhibition_suggestion.drop(index=index_suggested)
