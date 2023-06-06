@@ -6,6 +6,7 @@ import re
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.decomposition import PCA
 from sklearn.neighbors import NearestNeighbors
+from PIL import Image
 
 ####### Definition
 
@@ -71,26 +72,30 @@ def find_similar_exhibitions(index_suggested):
     return Paris_exhibitions.iloc[indices[0]]
 
 ####### Title 
-st.title('Art exhibition')
+st.title('Art exhibition :art:')
 st.header('Welcome to my art exhibitions recommender in Paris!')
+
+##### Image #########
+image = Image.open('Images/kandinsky-jaune-rouge-bleu-bandeau.jpg')
+st.image(image) 
 
 # import file about the French museums info
 Paris_exhibitions = pd.read_csv('Cleaned_data/Paris_exhibitions.csv', sep=',', encoding='UTF8')
 pd.set_option('display.max_columns', 20)
 
 ##### Data input - date of the exhibition
-d = st.date_input('When do you want to go for an exhibition?', datetime.date(2023, 6, 9))
+d = st.date_input(':alarm_clock: When do you want to go for an exhibition?', datetime.date(2023, 6, 9))
 Paris_exhibitions["date_choisie"] = d
 
 ##### Data input - genre of the exhibition
 
 genres = ['Art contemporain', 'Expo', 'Littérature', 'Cinéma', 'Bd', 'Histoire', 'Lgbt', 'Photo', 'Innovation', 'Nature', 'Photographie', 'Street-art', 'Peinture', 'Sculpture', 'Sciences']
-genre = st.selectbox("What kind of exhibition are you interested in?", genres)
+genre = st.selectbox(":sparkles: What kind of exhibition are you interested in?", genres)
 
 ##### Data input - audience of the exhibition
 
 audience = Paris_exhibitions['audience'].sort_values(ascending=False).unique()
-audience = st.selectbox("For whom?", audience)
+audience = st.selectbox(":family: For whom?", audience)
 
 ##### Output user's selection
 
@@ -123,7 +128,7 @@ st.divider()
 
 ### Select box
 
-correct = st.selectbox("Is it correct?", ['Your answer...', 'Yes','No'])
+correct = st.selectbox(":white_check_mark: Is it correct?", ['Your answer...', 'Yes','No'])
 
 ###### Condition 
 if correct == 'Yes':
@@ -143,13 +148,13 @@ st.divider()
 
 ### Select box
 
-interested = st.selectbox("You liked it? Check out related activities we thought of for you!", ['Your answer...', 'Yes','No'])
+interested = st.selectbox(":rocket: You liked it? Check out related activities we thought of for you!", ['Your answer...', 'Yes','No'])
 
 ###### Condition 
 if interested == 'Yes':
     similar_exhibitions = find_similar_exhibitions(index_suggested)
     st.write(pd.DataFrame(similar_exhibitions))
 elif interested == 'No':
-    st.write("Sorry, we're trying our best to match your tastes. Check the new exhibition we found out for you!")
+    st.write("Sorry, we're trying our best to match your tastes. :cry: Check the new exhibition we found out for you! :point_up_2:")
 else:
     st.write("No value selected")
