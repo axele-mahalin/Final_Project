@@ -7,7 +7,7 @@ from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.decomposition import PCA
 from sklearn.neighbors import NearestNeighbors
 from PIL import Image
-from streamlit_folium import st_folium
+from streamlit_folium import st_folium, folium_static
 import folium
 
 ####### Definition
@@ -71,7 +71,24 @@ def find_similar_exhibitions(index_suggested):
     distances, indices = neigh.kneighbors(concatenated_df.iloc[index_suggested:index_suggested+1])
 
     # Return the similar exhibitions
-    return Paris_exhibitions.iloc[indices[0]]
+    return Paris_exhibitions.iloc[indices[0]][1:]
+
+## Display exhibitions info
+
+# create variables to display after
+
+def variables_to_display(dataframe):
+    for i in range(len(dataframe)):
+        st.write("**Title:**", dataframe['titre'].values[i])
+        st.write('**Description:**', dataframe['chapeau'].values[i])
+        st.write('**Location:**', dataframe['nom_du_lieu'].values[i])
+        st.write("**Address:**")
+        st.write(dataframe['adresse_du_lieu'].values[i])
+        st.write(dataframe['code_postal'].values[i])
+        st.write(dataframe['ville'].values[i])
+        st.write('**Price:**', dataframe['type_de_prix'].values[i])
+        st.write('**URL:**', dataframe['url'].values[i])
+        st.divider()
 
 ####### Title 
 st.title('Art exhibition :art:')
@@ -117,50 +134,23 @@ exhibition_suggested = exhibition_suggestion.sample()
 index_suggested = exhibition_suggested.index.item()
 
 # removes the exhibition suggested from the exhibition suggestion
-new_exhibition_suggestion = exhibition_suggestion.drop(index=index_suggested)
-
-# create variables to display after
-
-title = exhibition_suggested['titre'].values[0]
-header = exhibition_suggested['chapeau'].values[0]
-location = exhibition_suggested['nom_du_lieu'].values[0]
-adresse = exhibition_suggested['adresse_du_lieu'].values[0]
-code_postal = exhibition_suggested['code_postal'].values[0]
-type_de_prix = exhibition_suggested['type_de_prix'].values[0]
-url = exhibition_suggested['url'].values[0]
-ville = exhibition_suggested['ville'].values[0]
-
-# create a map
-
-m = folium.Map(location=[lat, long], zoom_start=16)
-# folium.Marker([lat, long], popup="location").add_to(m)
-# st_data = st_folium(m, width=725)
-
-st.divider()
-
-### Select box
+#new_exhibition_suggestion = exhibition_suggestion.drop(index=index_suggested)
 
 correct = st.selectbox(":white_check_mark: Is it correct?", ['Your answer...', 'Yes','No'])
 
 ###### Condition 
 if correct == 'Yes':
     # print out information about the exhibition suggested
-    st.divider()
     st.subheader("Here is one exhibition you might like:")
-    st.write("**Title:**", title)
-    st.write('**Description:**', header)
-    st.write('**Location:**', location)
-    st.write("**Address:**", adresse)
-    st.write(adresse)
-    st.write(code_postal)
-    st.write(ville)
-    st.write('**Price:**', type_de_prix)
-    st.write('**URL:**', url)
-
+    variables_to_display(exhibition_suggested)
+    # Create a map
+    lat = exhibition_suggested['latitude'].values[0]
+    long = exhibition_suggested['longitude'].values[0]
+    m = folium.Map(location=[lat, long], zoom_start=16)
+    folium.Marker([lat, long], popup=exhibition_suggested['nom_du_lieu'].values[0]).add_to(m)
+    folium_static(m, width=725)
 else:
     st.write("Give us some information about what you're looking for!")
-
-st.divider()
 
 ### Select box
 
@@ -169,7 +159,7 @@ interested = st.selectbox(":rocket: You liked it? Check out related activities w
 ###### Condition 
 if interested == 'Yes':
     similar_exhibitions = find_similar_exhibitions(index_suggested)
-    st.write(pd.DataFrame(similar_exhibitions))
+    st.write(variables_to_display(similar_exhibitions))
 elif interested == 'No':
     st.write("Sorry, we're trying our best to match your tastes. :cry: Check the new exhibition we found out for you! :point_up_2:")
 else:
