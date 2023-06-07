@@ -109,12 +109,12 @@ Paris_exhibitions["date_choisie"] = d
 ##### Data input - genre of the exhibition
 
 genres = ['Art contemporain', 'Expo', 'Littérature', 'Cinéma', 'Bd', 'Histoire', 'Lgbt', 'Photo', 'Innovation', 'Nature', 'Photographie', 'Street-art', 'Peinture', 'Sculpture', 'Sciences']
-genre = st.selectbox(":sparkles: What kind of exhibition are you interested in?", genres)
+genre = st.selectbox(":sparkles: What kind of exhibition are you interested in?", genres, index=0)
 
 ##### Data input - audience of the exhibition
 
 audience = Paris_exhibitions['audience'].sort_values(ascending=False).unique()
-audience = st.selectbox(":family: For whom?", audience)
+audience = st.selectbox(":family: For whom?", audience, index=0)
 
 ##### Output user's selection
 
@@ -132,7 +132,7 @@ exhibition_suggested = exhibition_suggestion.sample()
 index_suggested = exhibition_suggested.index.item()
 
 # removes the exhibition suggested from the exhibition suggestion
-#new_exhibition_suggestion = exhibition_suggestion.drop(index=index_suggested)
+new_exhibition_suggestion = exhibition_suggestion.drop(index=index_suggested)
 
 correct = st.selectbox(":white_check_mark: Is it correct?", ['Your answer...', 'Yes','No'])
 
