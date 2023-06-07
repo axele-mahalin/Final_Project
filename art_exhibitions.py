@@ -124,8 +124,6 @@ st.write('**Audience:**', audience)
 
 ##### Exhibition suggestion
 
-# NOTE: VOIR POUR FILTRER EN FONCTION DE LA DATE 
-
 exhibition_suggestion = Paris_exhibitions.loc[(Paris_exhibitions["genre"] == genre) & (Paris_exhibitions["audience"] == audience)]
 
 exhibition_suggested = exhibition_suggestion.sample()

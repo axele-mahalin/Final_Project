@@ -7,6 +7,8 @@ from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.decomposition import PCA
 from sklearn.neighbors import NearestNeighbors
 from PIL import Image
+from streamlit_folium import st_folium
+import folium
 
 ####### Definition
 
@@ -117,18 +119,31 @@ index_suggested = exhibition_suggested.index.item()
 # removes the exhibition suggested from the exhibition suggestion
 new_exhibition_suggestion = exhibition_suggestion.drop(index=index_suggested)
 
+# create variables to display after
+
 title = exhibition_suggested['titre'].values[0]
 header = exhibition_suggested['chapeau'].values[0]
 location = exhibition_suggested['nom_du_lieu'].values[0]
 adresse = exhibition_suggested['adresse_du_lieu'].values[0]
 code_postal = exhibition_suggested['code_postal'].values[0]
 type_de_prix = exhibition_suggested['type_de_prix'].values[0]
+url = exhibition_suggested['url'].values[0]
+ville = exhibition_suggested['ville'].values[0]
+lat = exhibition_suggested['latitude'].values[0]
+long = exhibition_suggested['longitude'].values[0]
 
 st.divider()
 
 ### Select box
 
 correct = st.selectbox(":white_check_mark: Is it correct?", ['Your answer...', 'Yes','No'])
+
+import sys
+import streamlit as st
+
+# Initialize session state
+if 'map_shown' not in st.session_state:
+    st.session_state.map_shown = False
 
 ###### Condition 
 if correct == 'Yes':
@@ -139,12 +154,39 @@ if correct == 'Yes':
     st.write('**Description:**', header)
     st.write('**Location:**', location)
     st.write("**Address:**", adresse)
-    st.write('**Postal code:**', code_postal)
+    st.write(adresse)
+    st.write(code_postal)
+    st.write(ville)
     st.write('**Price:**', type_de_prix)
+    st.write('**URL:**', url)
+
+    # Create a map button
+    show_map = st.button(":white_check_mark: Show Location on Map")
+
+    # Check if the show_map button is clicked and map has not been shown
+    if show_map and not st.session_state.map_shown:
+        # Set the map_shown session state to True
+        st.session_state.map_shown = True
+
+        # Create a map
+        m = folium.Map(location=[lat, long], zoom_start=16)
+        folium.Marker([lat, long], popup="location").add_to(m)
+        st_data = st_folium(m, width=725)
+
 else:
     st.write("Give us some information about what you're looking for!")
 
+# Reset map_shown session state if the exhibition suggestion changes
+if exhibition_suggested.index.item() != st.session_state.get('exhibition_index'):
+    st.session_state.map_shown = False
+
+# Set the exhibition_index session state
+st.session_state.exhibition_index = exhibition_suggested.index.item()
+
+
+
 st.divider()
+
 
 ### Select box
 
