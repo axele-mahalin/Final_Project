@@ -10,7 +10,7 @@ from PIL import Image
 from streamlit_folium import st_folium, folium_static
 import folium
 
-pd.set_option('display.max_columns', 20)
+#pd.set_option('display.max_columns', 20)
 
 ###### To run streamlit page type in terminal 
 ######## streamlit run art_exhibitions.py
