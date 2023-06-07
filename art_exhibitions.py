@@ -87,11 +87,11 @@ st.title('Art exhibition :art:')
 st.header('Welcome to my art exhibitions recommender in Paris!')
 
 ##### Image #########
-image = Image.open('kandinsky-jaune-rouge-bleu-bandeau.jpg')
+image = Image.open('Images/kandinsky-jaune-rouge-bleu-bandeau.jpg')
 st.image(image) 
 
 # import file about the French museums info
-Paris_exhibitions = pd.read_csv('Paris_exhibitions.csv', sep=',', encoding='UTF8')
+Paris_exhibitions = pd.read_csv('Cleaned_data/Paris_exhibitions.csv', sep=',', encoding='UTF8')
 pd.set_option('display.max_columns', 20)
 
 ##### Data input - date of the exhibition
