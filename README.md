@@ -17,6 +17,17 @@ Having explained the end goal, my project is not only limited to the machine lea
 
 # Structure
 
+Data_cleaning.ipynb - data cleaning steps
+Machine_learning - machine learning model
+Art_exhibitions_simulations - user interface in python
+art_exhibitions.py - user interface in Streamlit
+Art_exhibitions_Tableau_dashboard - link to my Tableau dashboard (public)
+
+Cleaned data folder - clean datasets
+Data sources - data collected from 3 sources
+Images - image used for the Streamlit and Tableau dashboard
+SQL - ERD, SQL queries
+
 
 
 
